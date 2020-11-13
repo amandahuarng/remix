@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node" : "v14.14.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd backend && node index.js",
     "dev": "cd backend && nodemon index.js",
     "servers": "concurrently \"npm run dev\" \"cd client && npm run start\"",
-    "build": "cd client/ && npm install && npm run build"
+    "build": "cd client/ && npm install && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client/ && npm install && npm run build"
   },
   "cacheDirectories": [
     "node_modules",
