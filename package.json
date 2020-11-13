@@ -1,16 +1,25 @@
 {
-  "name": "backend",
+  "name": "remix",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "servers": "concurrently \"npm run dev\" \"cd ../client && npm run start\""
+    "start": "cd backend && node index.js",
+    "dev": "cd backend && nodemon index.js",
+    "servers": "concurrently \"npm run dev\" \"cd client && npm run start\"",
+    "build": "cd client/ && npm install && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "keywords": [],
-  "author": "",
+  "author": "Amanda Huang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amandahuarng/remix.git"
+  },
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.3.0",
